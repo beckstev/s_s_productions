@@ -4,7 +4,7 @@ Im Versuch 61 sollen die Grundlagen der Lasertechnik kennengelernt werden. Hierz
 wichtigsten theoretischen Grundlagen erarbeitet und anschließend die Eigenschaften eines Helium-Neon-Lasers
 experimentell untersucht.
 \section{Theorie}
-Anhand der Quellen \ref{} und \ref{} wird im folgenden die theoretische Funktionsweise eines Lasers
+Anhand der Quellen \cite{anleitung61} und \cite{dem} wird im folgenden die theoretische Funktionsweise eines Lasers
 erläutert. Zur Untersuchung der Wechselwirkung eines Strahlungsfeldes mit einem System aus Atomen bzw. Molekülen
 wird das theoretische Modell eines Zweiniveausystems verwendet.
 \subsection{Zweinniveausystem}
@@ -34,34 +34,59 @@ $n\ua{i}$ der Niveaus einer Boltzmann-Statistik
   n\ua{i} = \frac{g\ua{i}n}{Z}\exp\left\{-\frac{E\ua{i}}{k\ua{B}T}\right\}.
 \end{equation}
 Hierbei ist $n$ die Gesamtzahl der Systeme, $g\ua{i}$ das statistische Gewicht des Zustands $\ket{i}$ und $Z$ die Zustandssumme. Im thermischen
-Gleichgewicht dominiert somit die Besetzung des Grundzustandes.
-
-Die Aufgabe eines Lasers besteht nun darin, eine dauerhafte Verstärkung des Strahlungsfeldes zu erzeugen.
+Gleichgewicht dominiert somit die Besetzung des Grundzustandes. Die Aufgabe eines Lasers besteht nun darin,
+eine dauerhafte Verstärkung des Strahlungsfeldes zu erzeugen.
 
 \subsection{Funktionsprinzip eines Lasers}
 Ein Laser besteht prinzipiell aus einem aktiven Lasermedium, einer Pumpquelle und einem Resonator. Die Pumpquelle sorgt dafür, dass
 angeregte Zustände im Medium häufiger auftreten, als der Grundzustand. Diese Situation wird als Besetzungsinversion bezeichnet. Als direkte
 Folge finden im Medium mehr induzierte Emissionen als spontane Emissionen statt, was dazu führt, dass das Strahlungsfeld durch das Medium verstärkt wird.
 Der Resonator bewirkt, dass der Laufweg der Photonen im Medium verlängert wird. Das Prinzip ist in Abbildung \ref{fig: prinzip_laser} dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.5\textwidth]{theorie_bilder/prinzip_laser.png}
+  \caption{Darstellung der prinzipiellen Wirkungsweise eines Lasers \cite{anleitung61}.}
+  \label{fig: prinzip_laser}
+\end{figure}
 
-Optische Resonatoren sind durch gegenüberliegende Spiegel realisiert, von denen mindestens einer halbdurchlässig ist.
+Optische Resonatoren sind durch gegenüberliegende Spiegel realisiert, von denen mindestens einer halbdurchlässig ist, um den erzeugten Strahl
+auszukoppeln. Verluste werden inbesondere durch konfokale Anordnungen minimiert.
+In Analogie zum mechanischen Problem eines eingespannten Seiles können nur solchen Wellenlängen $\lambda$ im Resonator verstärkt werden, die
+folgender Bedingung genügen
+\begin{equation}
+  \lambda = \frac{2 L }{n} \quad n \in  \mathbb{N}.
+  \label{eq: longmoden}
+\end{equation}
+Mit dem Abstand der Spiegel $L$. Man spricht im Zusammenhang mit Lasern von longitudinalen Moden, die durch den Index $n$ bestimmt sind.
+Durch die Bedingung \eqref{eq: longmoden} tritt eine durch durch die Anordnung gegebene Selektion der möglichen Welllenlängen auf. Innerhalb
+einer natürlichen spektralen Verteilung, die insbesondere durch den optischen Dopplereffekt hervorgerufen wird, werden nur solche Wellenlängen
+verstärkt, die die longitudinale Modenbedingung erfüllen.
 
+Durch Beugungseffekte an Unebenheiten der Spiegel tritt eine Feldverteilung senkrecht zur Resonatorachse auf. Stationäre Intensitätsverteilungen
+werden als transversale oder TEM-Moden (\textit{transverse electromagnetic}) bezeichnet. Die TEM Moden stehen in direkter Analogie zu den Eigenmoden
+einer schwingenden eingespannten Membran (Trommel). Die Grund- oder Fundamentalmode $I\ua{00}$ folgt einer Gaußverteilung
+\begin{equation}
+  I\ua{00}(r) = I\ua{0}\exp\left\{- \frac{r^2}{w^2}\right\}
+  \label{eq: tem00}
+\end{equation}
+mit den freien Parametern $I\ua{0}$ und $w$ sowie dem senkrechten Abstand zur Resonatorachse $r$. Der Parameter $w$ wird auch als Radius
+der Fundamentalmode bezeichnet. Die Mode $I\ua{01}$ kann durch folgende Funktion beschrieben werden
+\begin{equation}
+  I\ua{01} = .
+  \label{eq: tem01}
+\end{equation}
 
-
-
-
-
-Eine stabile Modenverteilung
-stellt sich ein, wenn die folgende Stabilitätbedingung erfüllt ist
+Allgemein stellt sich eine stabile Modenverteilung
+ein, wenn die folgende Stabilitätbedingung erfüllt ist
 \begin{equation}
   0 \leq g_1 g_2 \leq 1.
   \label{eq: stabilität}
 \end{equation}
-Wobei $g\ua{i} = 1 - L/r\ua{i}$ mit dem Abstand der Spiegel $L$ und dem jeweiligen Krümmungsradius $r\ua{i}$. Das Produkt $g_1g_2$
+Wobei $g\ua{i} = 1 - L/r\ua{i}$ mit dem jeweiligen Krümmungsradius $r\ua{i}$. Das Produkt $g_1g_2$
 als Funktion des Spiegelsabstandes $L$ ist in Abbildung \ref{fig: stabilitätsbedingung} dargestellt.
-Für $r_1 = \SI{1000}{\milli\meter}$ ist die Bedingung \eqref{eq: stabilität} erfüllt für
+Für einen ebenen Spiegel ("$r_1 = \infty$") ist die Bedingung \eqref{eq: stabilität} erfüllt für
 \begin{equation}
-  \SI{0}{\meter}\leq L \leq \SI{1}{\meter} \quad\lor\quad \SI{1.4}{\meter}\leq L \leq \SI{2.4}{\meter}.
+  \SI{0}{\meter}\leq L \leq \SI{1.4}{\meter}.
 \end{equation}
 Bzw. für $r_1 = \SI{1400}{\milli\meter}$
 \begin{equation}
@@ -70,10 +95,24 @@ Bzw. für $r_1 = \SI{1400}{\milli\meter}$
 \begin{figure}
   \centering
   \includegraphics[width = \textwidth]{theorie_bilder/g_1_g_2.pdf}
-  \caption{Darstsellung der Stabilitätsbedingung \eqref{eq: stabilität}. Hierbei gilt jeweils $r_2 = \SI{1400}{\milli\meter}$.}
+  \caption{Darstsellung der Stabilitätsbedingung \eqref{eq: stabilität}. Hierbei gilt jeweils \\$r_2 = \SI{1400}{\milli\meter}$.}
   \label{fig: stabilitätsbedingung}
 \end{figure}
 
-
-
 \subsection{\ce{HeNe}-Laser }
+Als Resonatormedium wird bei \ce{HeNe}-Laser ein Gemisch aus einem Teil Helium und 5 Teilen Neon verwendet, das unter einem Druck von
+ca. $\SI{0}{\bar}$ in einem Glaskolben isoliert ist. Das eigentliche Lasermedium ist Neon, während Helium zum Pumpen verwendet wird.
+Die Erzeugung der notwendigen Besetzungsinversion ist in Abbildung~\ref{fig: energieschema} dargestellt. Durch eine Gasentladung werden
+die Heliumatome angeregt, welche wiederum durch Stöße zweiter Art die Neon Atome anregen können. Hierbei sind vorallem die sehr stabilen Zustände
+$2^1s$ und $2^3s$ des Helium verantwortlich, deren Anregungsenergie im Rahmen einer natürlichen Linienbreite die in \ref{fig: energieschema}
+eingezeichneten Neon Zustände anregen können. Da die mittlere Lebensdauer des $5s$ Zustandes größer ist als jene des $3p$ Zustandes, tritt die gewünschte
+Asymmetrie in den Besetzungszahlen zweier Energienieveaus auf. Stimulierte Emissionsprozesse vom $5s$ in den $3p$ Zustand sind durch die Langlebigkeit
+des $5s$-Niveaus pro Zeiteinheit wahrscheinlicher als spontane Emission.
+Die betreffende Spektrallinie des Übergangs zwischen den beiden Niveaus liegt mit $\lambda = \SI{632.8}{\nano\meter}$ im sichtbaren
+roten Bereich des elektromagnetischen Spektrums.
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.8\textwidth]{theorie_bilder/energieschema.png}
+  \caption{Darstellung des für den \ce{HeNe}-Laser relevanten Energieschemas \cite{wiki}.}
+  \label{fig: energieschema}
+\end{figure}

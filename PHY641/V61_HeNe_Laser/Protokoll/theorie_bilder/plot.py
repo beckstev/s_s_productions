@@ -19,8 +19,8 @@ L = np.linspace(0, 3)
 
 r_2 = 1.4
 plt.barh(0.5 , 3, 1, 0, color="green", alpha=0.2, edgecolor="gray", label="Stabiler Bereich")
-r_1 = 1.0
-plt.plot(L, g_1_g_2(L, r_1, r_2), 'b-', label = '$r_{1} = \SI{1000}{\milli\meter}$', linewidth = 1)
+r_1 = 1.4
+plt.plot(L, g_1_g_2(L, r_1, r_2), 'b-', label = '$r_{1} = \SI{1400}{\milli\meter}$', linewidth = 1)
 #plt.plot(L_nullstellen(r_1, r_2, 0), g_1_g_2(L_nullstellen(r_1, r_2, 0), r_1, r_2), 'kx')
 #plt.plot(L_nullstellen(r_1, r_2, 1), g_1_g_2(L_nullstellen(r_1, r_2, 1), r_1, r_2), 'kx')
 
