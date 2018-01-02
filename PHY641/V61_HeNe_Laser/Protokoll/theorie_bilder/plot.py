@@ -25,8 +25,8 @@ plt.plot(L, g_1_g_2(L, r_1, r_2), 'b-', label = '$r_{1} = \SI{1000}{\milli\meter
 #plt.plot(L_nullstellen(r_1, r_2, 1), g_1_g_2(L_nullstellen(r_1, r_2, 1), r_1, r_2), 'kx')
 
 
-r_1 = 1.4
-plt.plot(L, g_1_g_2(L, r_1, r_2), 'r-', label = '$r_{1} = \SI{1400}{\milli\meter}$', linewidth = 1)
+r_1 = 1e10
+plt.plot(L, g_1_g_2(L, r_1, r_2), 'r-', label = 'Flacher Spiegel $(r_{1} = \infty)$', linewidth = 1)
 #plt.plot(L_nullstellen(r_1, r_2, 0), g_1_g_2(L_nullstellen(r_1, r_2, 0), r_1, r_2), 'kx')
 #plt.plot(L_nullstellen(r_1, r_2, 1), g_1_g_2(L_nullstellen(r_1, r_2, 1), r_1, r_2), 'kx')
 plt.xlim(0, 3)
