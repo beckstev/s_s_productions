@@ -45,7 +45,7 @@ Folge sollen  im Medium mehr induzierte Emissionen als spontane Emissionen statt
 Der Resonator bewirkt, dass der Laufweg der Photonen im Medium verlängert wird. Das Prinzip ist in Abbildung \ref{fig: prinzip_laser} dargestellt.
 \begin{figure}
   \centering
-  \includegraphics[width = 0.5\textwidth]{theorie_bilder/prinzip_laser.png}
+  \includegraphics[width = 0.7\textwidth]{theorie_bilder/prinzip_laser.png}
   \caption{Darstellung der prinzipiellen Wirkungsweise eines Lasers \cite{anleitung61}.}
   \label{fig: prinzip_laser}
 \end{figure}
@@ -67,13 +67,13 @@ Durch Beugungseffekte an Unebenheiten der Spiegel tritt eine Feldverteilung senk
 werden als transversale oder TEM-Moden (\textit{transverse electromagnetic}) bezeichnet. Die TEM Moden stehen in direkter Analogie zu den Eigenmoden
 einer schwingenden eingespannten Membran (Trommel). Die Grund- oder Fundamentalmode $I\ua{00}$ folgt einer Gaußverteilung
 \begin{equation}
-  I\ua{00}(r) = I\ua{0}\exp\left\{- \frac{r^2}{w^2}\right\}
+  I\ua{00}(r) = I\ua{0}\exp\left\{- 2\left(\frac{d-d_0}{w}\right)^2\right\}
   \label{eq: tem00}
 \end{equation}
-mit den freien Parametern $I\ua{0}$ und $w$ sowie dem senkrechten Abstand zur Resonatorachse $r$. Der Parameter $w$ wird auch als Radius
+mit den freien Parametern $I\ua{0}$, $d_0$ und $w$ sowie dem senkrechten Abstand zur Resonatorachse $d$. Der Parameter $w$ wird auch als Radius
 der Fundamentalmode bezeichnet. Die Mode $I\ua{01}$ kann durch folgende Funktion beschrieben werden
 \begin{equation}
-  I\ua{01} = .
+  I\ua{01} = I\ua{0, 1}\exp\left\{- 2\left(\frac{d-d_{0, 1}}{w_{1}}\right)^2\right\} + I\ua{0, 2}\exp\left\{- 2\left(\frac{d-d_{0,2}}{w_{2}}\right)^2\right\}.
   \label{eq: tem01}
 \end{equation}
 Allgemein stellt sich eine stabile Modenverteilung
@@ -107,7 +107,7 @@ die Heliumatome angeregt, welche wiederum durch Stöße zweiter Art die Neon Ato
 $2^1s$ und $2^3s$ des Helium verantwortlich, deren Anregungsenergie im Rahmen einer natürlichen Linienbreite die in \ref{fig: energieschema}
 eingezeichneten Neon Zustände anregen können. Da die mittlere Lebensdauer des $5s$ Zustandes größer ist als jene des $3p$ Zustandes, tritt die gewünschte
 Asymmetrie in den Besetzungszahlen zweier Energienieveaus auf. Stimulierte Emissionsprozesse vom $5s$ in den $3p$ Zustand sind durch die Langlebigkeit
-des $5s$-Niveaus pro Zeiteinheit wahrscheinlicher als spontane Emission\footnote{Das eingans beschriebene Zwei-Niveau-System kann eine solche
+des $5s$-Niveaus pro Zeiteinheit wahrscheinlicher als spontane Emission\footnote{Das eingangs beschriebene Zwei-Niveau-System kann eine solche
 Asymmetrie nicht erzeugen, da induzierte Absorptionen und Emissionen in gleichem Maße auftreten würden.}.
 Die betreffende Spektrallinie des Übergangs zwischen den beiden Neon Niveaus liegt mit $\lambda = \SI{632.8}{\nano\meter}$ im sichtbaren
 roten Bereich des elektromagnetischen Spektrums.

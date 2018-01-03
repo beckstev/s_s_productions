@@ -3,7 +3,7 @@ Der verwendete Aufbau ist in Abbildung~\ref{fig: aufbau} einzusehen. Bevor relev
 Justage des Aufbaus notwendig. Hierzu wird ein weiterer Laser und zwei Lochblenden verwendet. Am Laserrohr wird eine Hochspanung
 angelegt, die die notwendige Gasentladung hervorruft. Durch Justierschrauben an den konfokalen Resonatorspiegeln (Radius jeweils $\SI{1.4}{\meter}$)
 und dem Laserrohr werden die Elemente so eingestellt, dass die optischen Achsen aufeinander liegen und der Laser anfängt zu leuchten.
-Zu Intensitätsmessung wird eine Photodiode verwendet, die hinter dem Laser positioniert ist.
+Zur Intensitätsmessung wird eine Photodiode verwendet, die hinter dem Laser positioniert ist.
 \begin{figure}
   \centering
   \includegraphics[width = 0.7\textwidth]{theorie_bilder/aufbau.png}
@@ -15,12 +15,12 @@ Mittels der Interferenz an einem optischen Gitter soll die Wellenlänge des erze
 und ein Schirm hinter dem Laser positioniert. Aus einer Messung des Abstandes zwischen Schirm und Gitter, sowie den auftretenden Intensitätsmaxima
 auf dem Schirm kann die Wellenlänge berechnet werden
 \begin{equation}
-  \lambda = \frac{g }{L }\frac{d_{n}}{n} \quad n \in \mathbb{N}.
+  \lambda = \frac{g \cdot \sin\left\{\arctan\left(\frac{d_n}{L} \right)  \right\}}{n},\quad n \in \mathbb{N}.
   \label{eq: interferenz}
 \end{equation}
 Mit der Gitterkonstanten $g$, dem Abstand des $n$-ten Interferentmaximums zum Hauptmaximum $d_{n}$ und dem Abstand zwichen Schirm und Gitter $L$.
 
-Zu Untersuchung der TEM-Moden wird eine defokussierende Linse hinter den Laser gestellt, die den Laserstrahl verbreitert.
+Zur Untersuchung der TEM-Moden wird eine defokussierende Linse hinter den Laser gestellt, die den Laserstrahl verbreitert.
 Mittels einer Mikrometerschraube kann die Photodiode
 senkrecht zur Strahlachse verschoben werden und somit die Abhängigkeit zwischen Intensität und Achsenabstand untersucht werden. Zunächst
 wird die Grundmode untersucht, die ohne Einsatz von Blenden gegenüber anderen Moden dominiert. Anschließeden wird die $I\ua{01}$-Mode
@@ -38,7 +38,7 @@ durch folgende Funktion zu beschreiben
   I(\varphi) = I\ua{0} \sin^2\left(\varphi + \varphi_0\right).
   \label{eq: malus}
 \end{equation}
-Mit den konstanten Parametern $I\ua{0}$ und $\varphi_0$ und dem reletiv zu einer beliebigen Startachse eingestellten Winkel $\varphi$.
+Mit den konstanten Parametern $I\ua{0}$ und $\varphi_0$ und dem relativ zu einer beliebigen Startachse eingestellten Winkel $\varphi$.
 
 Abschließend soll die Stabilitätsbedingung \eqref{eq: stabilität} für
 einen gekrümmten Spiegel $r = \SI{1.4}{\meter}$ und einen ebenen Spiegel quantitativ untersucht werden. Unter variabler Resonatorlänge $L$ wird hierzu der
