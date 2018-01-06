@@ -6,10 +6,10 @@ experimentell untersucht.
 \section{Theorie}
 Laser sind optische Geräte, mit denen möglichst monochromatisches Licht hoher Kohärenz, Intensität und gegebenenfalls
 Polarisation erzeugt werden soll.
-Anhand der Quellen \cite{anleitung61} und \cite{dem} wird im folgenden die theoretische Funktionsweise eines Lasers
+Anhand der Quellen \cite{anleitung61} und \cite{dem} wird im Folgenden die theoretische Funktionsweise eines Lasers
 erläutert. Zur Untersuchung der Wechselwirkung eines Strahlungsfeldes mit einem System aus Atomen bzw. Molekülen
 wird das theoretische Modell eines Zweiniveausystems verwendet.
-\subsection{Zweinniveausystem}
+\subsection{Zweiniveausystem}
 Als vereinfachtes Modell soll ein System mit den Zuständen $\ket{1}$ und $\ket{2}$ und zugehörigen Energieeigenwerten
 $E\ua{1}$ und $E\ua{2}$ (mit $E\ua{2}> E\ua{1}$) betrachtet werden. Ein externes Strahlungsfeld sei durch die spektrale Energiedichte $\rho(\nu)$
 charakterisiert. Durch die induzierte Absorption eine Photons der Energie $h \nu = E\ua{2} - E\ua{1}$ kann das
@@ -41,7 +41,7 @@ eine dauerhafte Verstärkung des Strahlungsfeldes zu erzeugen.
 \subsection{Funktionsprinzip eines Lasers}
 Ein Laser besteht prinzipiell aus einem aktiven Lasermedium, einer Pumpquelle und einem Resonator. Die Pumpquelle sorgt dafür, dass
 mindestens ein angeregter Zustand im Medium häufiger auftritt als ein darunter liegender. Diese Situation wird als Besetzungsinversion bezeichnet. Als direkte
-Folge sollen  im Medium mehr induzierte Emissionen als spontane Emissionen stattfinden, was dazu führt, dass das Strahlungsfeld durch das Medium verstärkt wird.
+Folge sollen im Medium mehr induzierte Emissionen als spontane Emissionen stattfinden, was dazu führt, dass das Strahlungsfeld durch das Medium verstärkt wird.
 Der Resonator bewirkt, dass der Laufweg der Photonen im Medium verlängert wird. Das Prinzip ist in Abbildung \ref{fig: prinzip_laser} dargestellt.
 \begin{figure}
   \centering
@@ -59,19 +59,19 @@ folgender Bedingung genügen
   \label{eq: longmoden}
 \end{equation}
 Mit dem Abstand der Spiegel $L$. Man spricht im Zusammenhang mit Lasern von longitudinalen Moden, die durch den Index $n$ bestimmt sind.
-Durch die Bedingung \eqref{eq: longmoden} tritt eine durch durch die Anordnung gegebene Selektion der möglichen Wellenlängen auf. Innerhalb
+Durch die Bedingung \eqref{eq: longmoden} tritt eine Selektion der möglichen Wellenlängen auf. Innerhalb
 einer natürlichen spektralen Verteilung, die insbesondere durch den optischen Dopplereffekt hervorgerufen wird, werden nur solche Wellenlängen
 verstärkt, die die longitudinale Modenbedingung erfüllen.
 
 Durch Beugungseffekte an Unebenheiten der Spiegel tritt eine Feldverteilung senkrecht zur Resonatorachse auf. Stationäre Intensitätsverteilungen
 werden als transversale oder TEM-Moden (\textit{transverse electromagnetic}) bezeichnet. Die TEM Moden stehen in direkter Analogie zu den Eigenmoden
-einer schwingenden eingespannten Membran (Trommel). Die Grund- oder Fundamentalmode $I\ua{00}$ folgt einer Gaußverteilung
+einer schwingenden eingespannten Membran (Trommel). Die Intensität $I\uua{00}$ der Grund- oder Fundamentalmode $T\ua{00}$ folgt einer Gaußverteilung
 \begin{equation}
   I\ua{00}(r) = I\ua{0}\exp\left\{- 2\left(\frac{d-d_0}{w}\right)^2\right\}
   \label{eq: tem00}
 \end{equation}
 mit den freien Parametern $I\ua{0}$, $d_0$ und $w$ sowie dem senkrechten Abstand zur Resonatorachse $d$. Der Parameter $w$ wird auch als Radius
-der Fundamentalmode bezeichnet. Die Mode $I\ua{01}$ kann durch folgende Funktion beschrieben werden
+der Fundamentalmode bezeichnet. Die Mode $T\ua{01}$ kann durch folgende Funktion beschrieben werden
 \begin{equation}
   I\ua{01} = I\ua{0, 1}\exp\left\{- 2\left(\frac{d-d_{0, 1}}{w_{1}}\right)^2\right\} + I\ua{0, 2}\exp\left\{- 2\left(\frac{d-d_{0,2}}{w_{2}}\right)^2\right\}.
   \label{eq: tem01}
@@ -100,7 +100,7 @@ Bzw. für $r_1 = \SI{1400}{\milli\meter}$
 \end{figure}
 
 \subsection{\ce{HeNe}-Laser }
-Als Resonatormedium wird bei \ce{HeNe}-Laser ein Gemisch aus einem Teil Helium und fünf Teilen Neon verwendet, das unter einem Druck von
+Als Resonatormedium wird beim \ce{HeNe}-Laser ein Gemisch aus einem Teil Helium und fünf Teilen Neon verwendet, das unter einem Druck von
 ca. $\SI{1}{\milli\bar}$ in einem Glaskolben isoliert ist. Das eigentliche Lasermedium ist Neon, während Helium zum Pumpen verwendet wird.
 Die Erzeugung der notwendigen Besetzungsinversion ist in Abbildung~\ref{fig: energieschema} dargestellt. Durch eine Gasentladung werden
 die Heliumatome angeregt, welche wiederum durch Stöße zweiter Art die Neon Atome anregen können. Hierbei sind vorallem die sehr stabilen Zustände
