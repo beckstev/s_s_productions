@@ -1,7 +1,7 @@
 \section{Auswertung}
 
 Die in der Auswertung bestimmten Ausgleichsrechnungen werden mit
-der Funktion \emph{curve\_ fit} \cite{scipy} aus dem Python Paket \emph{scipy.optimize}\cite{scipy} durchgeführt. %cite nach paket reicht
+der Funktion \emph{curve\_ fit} aus dem Python Paket \emph{scipy.optimize}\cite{scipy} durchgeführt. %cite nach paket reicht
 
 \subsection{Auswertung der $T_{00}$ Mode}
 \FloatBarrier
@@ -14,7 +14,7 @@ Weiterhin werden die Messdaten in Abbildung \ref{fig: T_00} grafisch dargestellt
   \caption{Plot der in Tabelle \ref{tab: T_00} gelisteten Messwerte. Zusätzlich ist in der Grafik die bestimmte Ausgleichskurve zu sehen.}
   \label{fig: T_00}
 \end{figure}
-In der Abbildung ist die mit Hilfe von \emph{scipy.optimize} erstelle Fit an die Funktion \eqref{} zu erkennen. %eqref
+In der Abbildung ist die mit Hilfe von \emph{scipy.optimize} erstelle Fit an die Funktion \eqref{eq: tem00} zu erkennen. %eqref
 Aus der Ausgleichsrechnung ergeben sich die folgenden Parameter
 
 \begin{align}
@@ -31,10 +31,10 @@ Aus der Ausgleichsrechnung ergeben sich die folgenden Parameter
 Die bei der Vermessung der $T_{10}$ Mode aufgenommen Messwerte sind in der Tabelle
 \ref{tab: T_10} notiert.
 \input{../Messdaten/table/T_10.tex}
-An die Messwerte wurde eine Funktion der Form \eqref{} gefittet, hierbei wird für %präsenz, eqref
+An die Messwerte wird eine Funktion der Form \eqref{eq: tem01} gefittet, hierbei wird für %präsenz, eqref
 die Funktion \emph{curve\_fit} die folgenden Startparameter gewählt
 \begin{align*}
-  I_{0,1}&=\SI{2.03}{\micro\ampere} & I_{0,2}&=\SI{1.68}{\micro\ampere}\\       %würde ich weglassen, wofür ist das relevant?
+  I_{0,1}&=\SI{2.03}{\micro\ampere} & I_{0,2}&=\SI{1.68}{\micro\ampere}\\       %würde ich weglassen, wofür ist das relevant? % Ohne Startparameter funktioniert der Fit nicht, dient der Überprüfbarkeit
   d_{0,1}&=\SI{-4}{\milli\meter}& d_{0,2}&=\SI{6.0}{\milli\meter} \\
   \omega_1&=\SI{1}{\per\milli\meter} &   \omega_2&=\SI{1}{\per\milli\meter}.
 \end{align*}
@@ -61,12 +61,7 @@ In der Tabelle \ref{tab: pola} sind die notierten Werte der Polarisationsmessung
 aufgelistet.
 \FloatBarrier
 \input{../Messdaten/table/polar_final.tex} %besser varphi
-An die Messwerte wird die Funktion %kannst du auch referenziere, habe ich in der theorie
-
-\begin{equation}
-  \label{eq: func_polarisation}
-  I(\phi)=I_0\sin^2\left(\phi-\phi_0\right)
-\end{equation}
+An die Messwerte wird die Funktion \eqref{eq: malus} %kannst du auch referenziere, habe ich in der theorie
 mit den folgenden Parametern gefittet:
 
 \begin{align}
@@ -89,11 +84,11 @@ Die Messwerte und die Ausgleichskurve sind in Abbildung \ref{fig: pola} skizzier
 \FloatBarrier
 \subsection{Wellenlängenbestimmung}
 Die Messwerte, um die Wellenlänge des Lasers zu bestimmen, befinden sich in Tabelle  \ref{tab: wellenlaenge}.
-Bei der Messung betrug der Abstand zum Schirm $l=\SI{83}{\centi\meter}$ %präsenz
-und wurde mit einem Gitter mit dem Gitterabstand von $a=\SI{1e-5}{\meter}$ durchgeführt. %präsenz
+Bei der Messung beträgt der Abstand zum Schirm $L=\SI{83}{\centi\meter}$ %präsenz
+und wird mit einem Gitter mit dem Gitterabstand von $a=\SI{1e-5}{\meter}$ durchgeführt. %präsenz
 \input{../Messdaten/table/wellenlaenge_final.tex}
 In der Tabelle werden außerdem die für jede Ordnung $n$ errechneten Wellenlängen $\lambda$ und Winkel $\theta$
-mit aufgelistet. Hierbei wird die Wellenlänge mit Formel \eqref{} und der Winkel mit \eqref{} berechnet. %eqref, winkelgleichung nicht explizit aufgeführt, kannst du hier nochmal hinschreiben
+mit aufgelistet. Hierbei wird für die Berechnung der Wellenlänge und des Winkels die Formel \eqref{eq: interferenz} verwendet. %eqref, winkelgleichung nicht explizit aufgeführt, kannst du hier nochmal hinschreiben
 Über alle vermessenen Ordnungen gemittelt ergibt sich für die Wellenlänge
 \begin{equation}
   \label{eq: mittelwert_wellenlaenge}
@@ -101,12 +96,12 @@ mit aufgelistet. Hierbei wird die Wellenlänge mit Formel \eqref{} und der Winke
 \end{equation}
 \FloatBarrier
 \FloatBarrier
-\subsection{Untersuchugn der Stabilitätsbedingung} %Untersuchung
+\subsection{Untersuchung der Stabilitätsbedingung} %Untersuchung
 Die Stabilitätsbedingung wird für zwei verschiedene Konfigurationen untersucht,
-zum einen werden für den Resonator zwei konkave Spiegel verwendet und zum andern %anderen
-ein konkaver und ein flacher Spiegel. %ebener
+zum anderen werden für den Resonator zwei konkave Spiegel verwendet und zum andern %anderen
+ein konkaver und ein ebener Spiegel. %ebener
 Um einen Vergleich zwischen den Messwerten und der Theorie zu ermöglichen, wird der gemessene
-Photostrom $i_p$ wie folgt umkskaliert: %I
+Photostrom $I_p$ wie folgt umkskaliert: %I
 \begin{equation*}
   I_p \rightarrow \frac{I_p\cdot c}{I_{p,max}}.
 \end{equation*}
@@ -118,7 +113,7 @@ Hierbei wird der Skalierungsfaktor $c$ aus Startlänge $d_0$ der jeweiligen Konf
 
 \FloatBarrier
 \FloatBarrier
-\subsubsection{Konkav-Konkave Konfiguration} %oder konfokale
+\subsubsection{Konfokale Konfiguration} %oder konfokale
 
 Die für diese Konfiguration aufgenommenen Messwerte befinden sich in Tabelle \ref{fig: konkon}.
 \input{../Messdaten/table/konkon_final.tex}
