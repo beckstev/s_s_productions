@@ -199,7 +199,7 @@ amplitude_pola=ufloat( params_pola[0], error_pola[0])
 phase_pola= ufloat( params_pola[1], error_pola[1])
 
 print(' Amplitude Pola: ', amplitude_pola,'\n')
-print(' Phase: ', phase_pola, '\n')
+print(' Phase: ', phase_pola, ufloat(np.rad2deg(noms(phase_pola)), np.rad2deg(stds(phase_pola))) , '\n')
 
 # Erstellen der Tabelle
 # Expand list to a length of 39
@@ -218,7 +218,7 @@ I_pola_list.append(0)
 
 l.Latexdocument('./table/polar.tex').tabular(
 data = [winkel_deg_list[0:13], winkel_list[0:13], I_pola_list[0:13], winkel_deg_list[13:26], winkel_list[13:26], I_pola_list[13:26], winkel_deg_list[26:], winkel_list[26:], I_pola_list[26:]], #Data incl. unpuarray
-header = ['\phi / \degree ','\phi / \\radian ', 'I_p / \milli\\ampere', '\phi / \degree ','\phi / \\radian ', 'I_p / \milli\\ampere', '\phi / \degree ','\phi / \\radian ', 'I_p / \milli\\ampere'],
+header = ['\\varphi / \degree ','\\varphi / \\radian ', 'I_p / \milli\\ampere', '\\varphi / \degree ','\\varphi / \\radian ', 'I_p / \milli\\ampere', '\\varphi / \degree ','\\varphi / \\radian ', 'I_p / \milli\\ampere'],
 places = [0,2, 2, 0,2, 2, 0,2, 2],
 caption = 'Aufgenommene Werte bei der Polarisationsmessungs.',
 label = 'pola')
@@ -229,7 +229,7 @@ phi= np.linspace(winkel[0], winkel[-1],1000)
 plt.clf()
 plt.plot( winkel, I_pola, '.', label='Messdaten')
 plt.plot( phi, polarisation(phi, params_pola[0], params_pola[1]), label='Fit')
-plt.xlabel(r'$\phi \, / \, \mathrm{rad}$')
+plt.xlabel(r'$\varphi \, / \, \mathrm{rad}$')
 plt.ylabel( r'$ I_{\mathrm{p}} \, / \, mA$')
 plt.legend()
 plt.grid()
@@ -252,7 +252,7 @@ wellenlange=lamb( 1e-5, n, 83.0e-2,(abstand/2)*1e-2) # dictenoary with 'theta' a
 l.Latexdocument('./table/wellenlaenge.tex').tabular(
 data = [n, abstand, wellenlange['theta'], wellenlange['lambda']*1e9], #Data incl. unpuarray
 header = ['n {}', 'd / \centi\meter', '\\theta / \\radian', '\lambda / \\nano\meter'],
-places = [1, 1, 1, 1],
+places = [0, 1, 1, 1],
 caption = 'Aufgenommene Messwerte für die Wellenlängenbestimmung. Der Winkel $\theta$ und die Wellenlänge $\lambda$ werden mit den Gleichung \eqref{} und \eqref{} bestimmt. Der Abstand zum Schirm beträgt $l=\SI{83}{\centi\meter}$ und der Gitterabstand $a=\SI{1e-5}{\meter}$.',
 label = 'wellenlänge')
 

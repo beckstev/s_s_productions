@@ -68,7 +68,7 @@ mit den folgenden Parametern gefittet:
   \label{eq: fit_pola}
   \begin{aligned}
   I_0&=\SI{0.748\pm0.005}{\milli\ampere}\\ %s.o.
-  \phi_0&=\SI{0.792\pm0.006}{\radian}
+  \varphi_0&=\SI{45.36\pm0.35}{\degree}=\SI{0.792\pm0.006}{\radian}
 \end{aligned}
 \end{align}
 Die Messwerte und die Ausgleichskurve sind in Abbildung \ref{fig: pola} skizziert.
@@ -106,7 +106,7 @@ Photostrom $I_p$ wie folgt umkskaliert: %I
   I_p \rightarrow \frac{I_p\cdot c}{I_{p,max}}.
 \end{equation*}
 Hierbei wird der Skalierungsfaktor $c$ aus Startlänge $d_0$ der jeweiligen Konfiguration (legt $r_i$ fest) und der Formel
-\eqref{} berechnet. %eqref
+\eqref{eq: spiegelparameter} berechnet. %eqref
 \begin{equation*}
   c=g_1g_2(d_0, r_1, r_2)
 \end{equation*}
@@ -131,12 +131,12 @@ gefittet. Aus der Ausgleichsrechnung folgen die Werte
     c&=\num{0.47\pm0.28}.
   \end{aligned}
 \end{align}
-In der Grafik \ref{fig: konkon} werden die Messwerte, der Fit und die Theoriekurve \eqref{} miteinander verglichen. %eqref
+In der Grafik \ref{fig: konkon} werden die Messwerte, der Fit und die Theoriekurve \eqref{eq: stabilität} miteinander verglichen. %eqref
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{../Messdaten/plots/konkon.pdf}
-  \caption{Plot der in Tabelle \ref{tab: konkon} gelisteten Messwerte. Zusätzlich ist in der Grafik die bestimmte Ausgleichskurve und die Theoriekurve \eqref{} zu sehen.} %eqref
+  \caption{Plot der in Tabelle \ref{tab: konkon} gelisteten Messwerte. Zusätzlich ist in der Grafik die bestimmte Ausgleichskurve und die Theoriekurve \eqref{eq: stabilität} zu sehen.} %eqref
   \label{fig: konkon}
 \end{figure}
 
@@ -158,12 +158,12 @@ gefittet. Die Parameter $m$ und $a$ werden mittels Regressionsberechnung zu
     a&=\num{1.46\pm0.27}.
   \end{aligned}
 \end{align}
-Die Regressionskurve wird mit den Messwerten und der Theoriekurve \eqref{} in Abbildung \ref{fig: konflach} dargestellt.
+Die Regressionskurve wird mit den Messwerten und der Theoriekurve \eqref{eq: stabilität} in Abbildung \ref{fig: konflach} dargestellt.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{../Messdaten/plots/konflach.pdf}
-  \caption{Plot der in Tabelle \ref{tab: konflach} gelisteten Messwerte. Zusätzlich ist in der Grafik die bestimmte Ausgleichsgerade und die Theoriekurve \eqref{} zu sehen.}
+  \caption{Plot der in Tabelle \ref{tab: konflach} gelisteten Messwerte. Zusätzlich ist in der Grafik die bestimmte Ausgleichsgerade und die Theoriekurve \eqref{eq: stabilität} zu sehen.}
   \label{fig: konflach}
 \end{figure}
 \FloatBarrier
