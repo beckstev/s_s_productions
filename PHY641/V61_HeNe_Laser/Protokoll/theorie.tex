@@ -46,14 +46,14 @@ Der Resonator bewirkt, dass der Laufweg der Photonen im Medium verlängert wird.
 \begin{figure}
   \centering
   \includegraphics[width = 0.7\textwidth]{theorie_bilder/prinzip_laser.png}
-  \caption{Darstellung der prinzipiellen Wirkungsweise eines Lasers \cite{anleitung61}.} %Finde Funktionsweise passt nicht so, er ist ja der Aufbau des Resonatros zu erkennen
+  \caption{Darstellung der grundlegenden Komponenten eines Lasers \cite{anleitung61}.} %Finde Funktionsweise passt nicht so, er ist ja der Aufbau des Resonatros zu erkennen
   \label{fig: prinzip_laser}
 \end{figure}
 
 Optische Resonatoren sind durch gegenüberliegende Spiegel realisiert, von denen mindestens einer halbdurchlässig ist, um den erzeugten Strahl
 auszukoppeln. Verluste an den offenen Rändern der Anordung werden inbesondere durch konfokale Anordnungen minimiert.
-In Analogie zum mechanischen Problem eines eingespannten Seiles können nur solchen Wellenlängen $\
-$ im Resonator verstärkt werden, die %$\$ ?
+In Analogie zum mechanischen Problem eines eingespannten Seiles können nur solche Wellenlängen $\lambda$
+im Resonator verstärkt werden, die
 folgender Bedingung genügen
 \begin{equation}
   \lambda = \frac{2 L }{n} \quad n \in  \mathbb{N}.
@@ -68,22 +68,30 @@ Durch Beugungseffekte an Unebenheiten der Spiegel tritt eine Feldverteilung senk
 werden als transversale oder TEM-Moden (\textit{transverse electromagnetic}) bezeichnet. Die TEM Moden stehen in direkter Analogie zu den Eigenmoden
 einer schwingenden eingespannten Membran (Trommel). Die Intensität $I\ua{00}$ der Grund- oder Fundamentalmode $T\ua{00}$ folgt einer Gaußverteilung
 \begin{equation}
-  I\ua{00}(r) = I\ua{0}\exp\left\{- 2\left(\frac{d-d_0}{w}\right)^2\right\}
+  I\ua{00}(d) = I\ua{0}\exp\left\{- 2\left(\frac{d-d_0}{w}\right)^2\right\}
   \label{eq: tem00}
 \end{equation}
 mit den freien Parametern $I\ua{0}$, $d_0$ und $w$ sowie dem senkrechten Abstand zur Resonatorachse $d$. Der Parameter $w$ wird auch als Radius
 der Fundamentalmode bezeichnet. Die Mode $T\ua{01}$ kann durch folgende Funktion beschrieben werden
 \begin{equation} % Ich würde anmerken, dass die T_01 Mode eigentlich symetrisch ist, und nur wegen der Messung asymetrisch ist.
-  I\ua{01} = I\ua{0, 1}\exp\left\{- 2\left(\frac{d-d_{0, 1}}{w_{1}}\right)^2\right\} + I\ua{0, 2}\exp\left\{- 2\left(\frac{d-d_{0,2}}{w_{2}}\right)^2\right\}.
+  I\ua{01}(d) = I\ua{0, 1}\exp\left\{- 2\left(\frac{d-d_{0, 1}}{w_{1}}\right)^2\right\} + I\ua{0, 2}\exp\left\{- 2\left(\frac{d-d_{0,2}}{w_{2}}\right)^2\right\}.
   \label{eq: tem01}
 \end{equation}
+Dabei wird eine Asymmetrie in der Höhe der beiden Maxima zugelassen (i.A. $I\ua{0, 1} \neq I\ua{0, 2}$), die theoretisch nicht
+erwartet wird.
+
 Allgemein stellt sich eine stabile Modenverteilung
 ein, wenn die folgende Stabilitätbedingung erfüllt ist
 \begin{equation}
   0 \leq g_1 g_2 \leq 1.
   \label{eq: stabilität}
 \end{equation}
-Wobei $g\ua{i} = 1 - L/r\ua{i}$ mit dem jeweiligen Krümmungsradius $r\ua{i}$. Das Produkt $g_1g_2$
+Wobei
+\begin{equation}
+  g\ua{i} = 1 - L/r\ua{i}
+  \label{eq: spiegelparameter}
+\end{equation}
+mit dem jeweiligen Krümmungsradius $r\ua{i}$ der Spiegel. Das Produkt $g_1g_2$
 als Funktion des Spiegelsabstandes $L$ ist für $r\ua{2} = \SI{1400}{\meter}$ in Abbildung~\ref{fig: stabilitätsbedingung} dargestellt.
 Für einen ebenen Spiegel ("$r_1 = \infty$") ist die Bedingung \eqref{eq: stabilität} erfüllt für
 \begin{equation}
