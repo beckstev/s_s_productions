@@ -12,10 +12,10 @@ Der Fehler ergibt sich gemäß Gaußscher Fehlerfortpflanzung zu
 \begin{equation}
   \sigma_{y_i} = \sqrt{\left(\frac{\sigma_{N_0}}{N_0} \right)^2 +    \left(\frac{\sigma_{N\ua{i}}}{N\ua{i}} \right)^2}.
 \end{equation}
-Die Kovarianzmatrix $V$ des Vektors $\vec{y} = \left(y_1, \dots , y\ua{n} \right)^\top$ hat aufgrund der statistischen Unabhängigkeit der
+Die Kovarianzmatrix $\symbf{V}\left[\vec{y}\right]$ des Vektors $\vec{y} = \left(y_1, \dots , y\ua{n} \right)^\top$ hat aufgrund der statistischen Unabhängigkeit der
 Einzelmessungen eine diagonale Gestalt
 \begin{equation}
-  V\left[\vec{y}\right] = \mathup{diag}\left(\sigma_{y_1}^2, \dots , \sigma_{y\ua{n}}^2 \right).
+  \symbf{V}\left[\vec{y}\right] = \mathup{diag}\left(\sigma_{y_1}^2, \dots , \sigma_{y\ua{n}}^2 \right).
 \end{equation}
 Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
 \begin{equation}
@@ -23,7 +23,7 @@ Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ 
 \end{equation}
 Und die zugehörige Kovarianzmatrix $V[\vec{\mu}]$ gemäß
 \begin{equation}
-  V[\vec{\mu}] = \left( A^\top W  A\right)^{-1}
+  \symbf{V}\left[\vec{\mu}\right] = \left( A^\top W  A\right)^{-1}
 \end{equation}
 Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus den Wurzeln der Diagonalemente der Kovarianzmatrix
 \begin{equation}
