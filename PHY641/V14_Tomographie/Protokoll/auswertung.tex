@@ -1,1 +1,67 @@
 \section{Auswertung}
+Die nachfolgenden Operationen der linearen Algebra werden mit dem \emph{python}-Paket
+\emph{numpy}\cite{} durchgeführt. Hierbei ist das Vorgehen bei allen drei Würfeln
+analog. Die gemessenen Counts $N\ua{i}$ werden mit einem statistischen Fehler
+von $\sigma_{N\ua{i}} = \sqrt{N\ua{i}}$ belegt. Mit den Ergebnissen aus
+der Leermessung wird für jeden Wert $N\ua{i}$ die Größe
+\begin{equation}
+  y\ua{i} = \ln\left(\frac{N_0}{N\ua{i}} \right)
+\end{equation}
+berechnet, wobei $N_0$ der auf die entsprechende Messzeit normierte Wert der Leermessung ist.
+Der Fehler ergibt sich gemäß Gaußscher Fehlerfortpflanzung zu
+\begin{equation}
+  \sigma_{y_i} = \sqrt{\left(\frac{\sigma_{N_0}}{N_0} \right)^2 +    \left(\frac{\sigma_{N\ua{i}}}{N\ua{i}} \right)^2}.
+\end{equation}
+Die Kovarianzmatrix $V$ des Vektors $\vec{y} = \left(y_1, \dots , y\ua{n} \right)^\top$ hat aufgrund der statistischen Unabhängigkeit der
+Einzelmessungen eine diagonale Gestalt
+\begin{equation}
+  V\left[\vec{y}\right] = \mathup{diag}\left(\sigma_{y_1}^2, \dots , \sigma_{y\ua{n}}^2 \right).
+\end{equation}
+Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
+\begin{equation}
+  \vec{\mu} = \left(A^\top W A\right)^{-1} W A^\top \vec{y}, \quad W = V^{-1}.
+\end{equation}
+Und die zugehörige Kovarianzmatrix $V[\vec{\mu}]$ gemäß
+\begin{equation}
+  V[\vec{\mu}] = \left( A^\top W  A\right)^{-1}
+\end{equation}
+Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus den Wurzeln der Diagonalemente der Kovarianzmatrix
+\begin{equation}
+ \sigma_{\mu\ua{i}} = \sqrt{\left(V[\vec{\mu}]\right)\ua{ii}}.
+\end{equation}
+
+
+
+
+
+\subsection{Leermessung}
+Die gemessenen Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt.
+%\input{}
+
+
+\subsection{Untersuchung des Aluminium-Würfels}
+Die aufgenommenen Daten und berechneten Größen sind in Tabelle~\ref{tab: alu} einzusehen.
+Als gewichteter Mittelwert des Absorptionskoeffizienten $\mu_{\ce{Al}}$ ergibt sich
+\begin{equation}
+  \mu_{\ce{Al}} = \dots .
+\end{equation}
+Der Literaturwert $\mu_{\ce{Al}, \mathup{lit}}$ beträgt gemäß Quelle \cite{}
+\begin{equation}
+  \mu_{\ce{Al}, \mathup{lit}} = \dots .
+\end{equation}
+
+\subsection{Untersuchung des Blei-Würfels}
+Die aufgenommenen Daten und berechneten Größen sind in Tabelle~\ref{tab: blei} einzusehen.
+%\input{}
+Als gewichteter Mittelwert des Absorptionskoeffizienten $\mu_{\ce{Pb}}$ ergibt sich
+\begin{equation}
+  \mu_{\ce{Pb}} = \dots .
+\end{equation}
+Der Literaturwert $\mu_{\ce{Pb}, \mathup{lit}}$ beträgt gemäß Quelle \cite{}
+\begin{equation}
+  \mu_{\ce{Pb}, \mathup{lit}} = \dots .
+\end{equation}
+
+
+\subsection{Untersuchung des Unbekannten Würfels}
+Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen.
