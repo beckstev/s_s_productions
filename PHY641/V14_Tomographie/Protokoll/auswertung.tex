@@ -5,12 +5,18 @@ analog. Die gemessenen Counts $N\ua{i}$ werden mit einem statistischen Fehler
 von $\sigma_{N\ua{i}} = \sqrt{N\ua{i}}$ belegt. Mit den Ergebnissen aus
 der Leermessung wird für jeden Wert $N\ua{i}$ die Größe
 \begin{equation}
-  y\ua{i} = \ln\left(\frac{N_0}{N\ua{i}} \right)
+  y\ua{i} = \ln\left(\frac{N\ua{0, i}}{N\ua{i}} \right)
+  \label{eq: y}
 \end{equation}
-berechnet, wobei $N_0$ der auf die entsprechende Messzeit normierte Wert der Leermessung ist.
+berechnet, wobei $N\ua{0, i}$ der gemäß
+\begin{equation}
+  N\ua{0, i} = N\ua{0} \frac{t\ua{i}}{t_0}
+  \label{eq: count_skalierung}
+\end{equation}
+auf die entsprechende Messzeit $t\ua{i}$ normierte Wert der Leermessung $(N\ua{0}, t_0)$ ist.
 Der Fehler ergibt sich gemäß Gaußscher Fehlerfortpflanzung zu
 \begin{equation}
-  \sigma_{y_i} = \sqrt{\left(\frac{\sigma_{N_0}}{N_0} \right)^2 +    \left(\frac{\sigma_{N\ua{i}}}{N\ua{i}} \right)^2}.
+  \sigma_{y_i} = \sqrt{\left(\frac{\sigma_{N\ua{0, i}}}{N\ua{0, i}} \right)^2 +    \left(\frac{\sigma_{N\ua{i}}}{N\ua{i}} \right)^2}.
 \end{equation}
 Die Kovarianzmatrix $\symbf{V}\left[\vec{y}\right]$ des Vektors $\vec{y} = \left(y_1, \dots , y\ua{n} \right)^\top$ hat aufgrund der statistischen Unabhängigkeit der
 Einzelmessungen eine diagonale Gestalt
@@ -19,11 +25,11 @@ Einzelmessungen eine diagonale Gestalt
 \end{equation}
 Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
 \begin{equation}
-  \vec{\mu} = \left(A^\top W A\right)^{-1} W A^\top \vec{y}, \quad W = V^{-1}.
+  \vec{\mu} = \left(\symbf{A}^\top \symbf{W} \symbf{A}\right)^{-1}  \symbf{A}^\top \symbf{W} \, \vec{y}, \quad \symbf{W} = \symbf{V}^{-1}.
 \end{equation}
-Und die zugehörige Kovarianzmatrix $V[\vec{\mu}]$ gemäß
+Und die zugehörige Kovarianzmatrix $\symbf{V}[\vec{\mu}]$ gemäß
 \begin{equation}
-  \symbf{V}\left[\vec{\mu}\right] = \left( A^\top W  A\right)^{-1}
+  \symbf{V}\left[\vec{\mu}\right] = \left( \symbf{A}^\top \symbf{W}  \symbf{A}\right)^{-1}
 \end{equation}
 Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus den Wurzeln der Diagonalemente der Kovarianzmatrix
 \begin{equation}
@@ -35,33 +41,45 @@ Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus d
 
 
 \subsection{Leermessung}
-Die gemessenen Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt.
-%\input{}
+Die Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt. Hierbei sind zu jeder Projektion
+die Kanäle angegeben, über die integriert wird. Die Messung von Projektion $4$ wird representativ für die
+Projektionen $y, y, z$, die von $5$ für $x,yz$ und die von $7$ für $x, y, z$.
+\input{../Messdaten/tabs/leermessung.tex}
 
+\subsection{Untersuchung des Aluminium- und Blei-Würfels}
+Die aufgenommenen Daten und berechneten Größen sind in den Tabellen~\ref{tab: alu} und \ref{tab: blei} einzusehen.
+Die gemäß der Gleichungen \eqref{} und \eqref{} bestimmten Absorptionskoeffizienten
+der einzelnen Elementarwürfel sind in Tabelle~\ref{tab: results_mu} aufgeführt.
+\FloatBarrier
+\input{../Messdaten/tabs/alu.tex}
+\input{../Messdaten/tabs/blei.tex}
 
-\subsection{Untersuchung des Aluminium-Würfels}
-Die aufgenommenen Daten und berechneten Größen sind in Tabelle~\ref{tab: alu} einzusehen.
-Als gewichteter Mittelwert des Absorptionskoeffizienten $\mu_{\ce{Al}}$ ergibt sich
-\begin{equation}
-  \mu_{\ce{Al}} = \dots .
-\end{equation}
-Der Literaturwert $\mu_{\ce{Al}, \mathup{lit}}$ beträgt gemäß Quelle \cite{}
-\begin{equation}
-  \mu_{\ce{Al}, \mathup{lit}} = \dots .
-\end{equation}
-
-\subsection{Untersuchung des Blei-Würfels}
-Die aufgenommenen Daten und berechneten Größen sind in Tabelle~\ref{tab: blei} einzusehen.
-%\input{}
-Als gewichteter Mittelwert des Absorptionskoeffizienten $\mu_{\ce{Pb}}$ ergibt sich
-\begin{equation}
-  \mu_{\ce{Pb}} = \dots .
-\end{equation}
-Der Literaturwert $\mu_{\ce{Pb}, \mathup{lit}}$ beträgt gemäß Quelle \cite{}
-\begin{equation}
-  \mu_{\ce{Pb}, \mathup{lit}} = \dots .
-\end{equation}
-
+Als gewichtete Mittelwerte der Absorptionskoeffizienten für Aluminium $\mu_{\ce{Al}}$ und Blei
+ergeben sich
+\begin{align}
+  \begin{aligned}
+  \mu_{\ce{Al}} &= \SI{0.188(3)}{\per\centi\meter}\\
+  \mu_{\ce{Pb}} &= \SI{0.934(4)}{\per\centi\meter}.
+  \label{eq: exp_mu}
+\end{aligned}
+\end{align}
+Die Literaturwerte $\mu_{\ce{Al}, \mathup{lit}}$ und $\mu_{\ce{Pb}, \mathup{lit}}$ betragen gemäß Quelle \cite{}
+\begin{align}
+  \begin{aligned}
+  \mu_{\ce{Al}, \mathup{lit}} &= \SI{0.202}{\per\centi\meter} \\
+  \mu_{\ce{Pb}, \mathup{lit}} &= \SI{1.245}{\per\centi\meter}.
+  \label{eq: lit_mu}
+\end{aligned}
+\end{align}
+\input{../Messdaten/tabs/mu_pb_al.tex}
+\FloatBarrier
 
 \subsection{Untersuchung des Unbekannten Würfels}
-Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen.
+Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen. Zur Quantitativen Diskussion der Zusammensetzung
+des unbekannten Würfels sind in Tabelle~\ref{tab: delta_mu} neben den bestimmten Absorptionskoeffizienten die mittleren Absoluten
+Abweichungen zu den Literaturwerten \eqref{eq: lit_mu} und experimentell bestimmten Werten \eqref{eq: exp_mu} eingetragen.
+\FloatBarrier
+\input{../Messdaten/tabs/unb.tex}
+
+\input{../Messdaten/tabs/delta_mu.tex}
+\FloatBarrier
