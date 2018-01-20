@@ -26,6 +26,7 @@ Einzelmessungen eine diagonale Gestalt
 Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
 \begin{equation}
   \vec{\mu} = \left(\symbf{A}^\top \symbf{W} \symbf{A}\right)^{-1}  \symbf{A}^\top \symbf{W} \, \vec{y}, \quad \symbf{W} = \symbf{V}^{-1}.
+  \label{eq: mu}
 \end{equation}
 Und die zugehörige Kovarianzmatrix $\symbf{V}[\vec{\mu}]$ gemäß
 \begin{equation}
@@ -34,11 +35,8 @@ Und die zugehörige Kovarianzmatrix $\symbf{V}[\vec{\mu}]$ gemäß
 Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus den Wurzeln der Diagonalemente der Kovarianzmatrix
 \begin{equation}
  \sigma_{\mu\ua{i}} = \sqrt{\left(V[\vec{\mu}]\right)\ua{ii}}.
+ \label{eq: sigma_mu}
 \end{equation}
-
-
-
-
 
 \subsection{Leermessung}
 Die Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt. Hierbei sind zu jeder Projektion
@@ -48,13 +46,13 @@ Projektionen 2, 3, 10, 11, 12 verwendet, die von $4$ für 6, 7, 9 und die von $8
 
 \subsection{Untersuchung des Aluminium- und Blei-Würfels}
 Die aufgenommenen Daten und berechneten Größen sind in den Tabellen~\ref{tab: alu} und \ref{tab: blei} einzusehen.
-Die gemäß der Gleichungen \eqref{} und \eqref{} bestimmten Absorptionskoeffizienten
+Die gemäß der Gleichungen \eqref{eq: mu} und \eqref{eq: sigma_mu} bestimmten Absorptionskoeffizienten
 der einzelnen Elementarwürfel sind in Tabelle~\ref{tab: results_mu} aufgeführt.
 \FloatBarrier
 \input{../Messdaten/tabs/alu.tex}
 \input{../Messdaten/tabs/blei.tex}
 
-Als gewichtete Mittelwerte der Absorptionskoeffizienten für Aluminium $\mu_{\ce{Al}}$ und Blei
+Als gewichtete Mittelwerte der Absorptionskoeffizienten für Aluminium $\mu_{\ce{Al}}$ und Blei $\mu_{\ce{Pb}}$
 ergeben sich
 \begin{align}
   \begin{aligned}
@@ -80,6 +78,5 @@ des unbekannten Würfels sind in Tabelle~\ref{tab: delta_mu} neben den bestimmte
 Abweichungen zu den Literaturwerten \eqref{eq: lit_mu} und experimentell bestimmten Werten \eqref{eq: exp_mu} eingetragen.
 \FloatBarrier
 \input{../Messdaten/tabs/unb.tex}
-
 \input{../Messdaten/tabs/delta_mu.tex}
 \FloatBarrier
