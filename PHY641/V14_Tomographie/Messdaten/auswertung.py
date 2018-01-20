@@ -30,7 +30,7 @@ A = np.matrix([[1, 1, 1, 0, 0, 0, 0, 0, 0],
                [1, 0, 0, 1, 0, 0, 1, 0, 0],
                [0, 1, 0, 0, 1, 0, 0, 1, 0],
                [0, 0, 1, 0, 0, 1, 0, 0, 1]])
-#print(np.linalg.det((A.T * A).I))
+print(np.linalg.det((A.T * A)))
 
 
 def cov_y(y):
