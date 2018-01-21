@@ -25,7 +25,7 @@ class Latexdocument(object):
         with open(self.name, 'w') as f:
             f.write('\\begin{table} \n\\centering \n\\caption{' + caption + '} \n\\label{tab: ' + label + '} \n\\begin{tabular}{')
             for i in range(0, len(data)):
-                if type(data[i][0]) == uncertainties.core.Variable:
+                if (type(data[i][0]) == uncertainties.core.Variable or type(data[i][0]) == uncertainties.core.AffineScalarFunc):
                     f.write('S[table-format=' + str(places[i][0]) + ']@{${}\pm{}$} S[table-format=' + str(places[i][1]) + '] ')
                 else:
                     f.write('S ')
@@ -34,12 +34,12 @@ class Latexdocument(object):
 
             for i in range(0, len(data)):
                 if i == len(data) - 1:
-                    if type(data[i][0]) == uncertainties.core.Variable:
+                    if (type(data[i][0]) == uncertainties.core.Variable or type(data[i][0]) == uncertainties.core.AffineScalarFunc):
                         f.write('\multicolumn{2}{c}{$' + header[i][0:header[i].find('/')] +  '\:/\: \si{' + header[i][header[i].find('/')+1:] + '}$} \\\ \n')
                     else:
                         f.write('{$' + header[i][0:header[i].find('/')] +  '/ \si{' + header[i][header[i].find('/')+1:] + '}$} \\\ \n')
                 else:
-                    if type(data[i][0]) == uncertainties.core.Variable:
+                    if (type(data[i][0]) == uncertainties.core.Variable or type(data[i][0]) == uncertainties.core.AffineScalarFunc):
                         f.write('\multicolumn{2}{c}{$' + header[i][0:header[i].find('/')] +  '\:/\: \si{' + header[i][header[i].find('/')+1:] + '}$} & ')
                     else:
                         f.write('{$' + header[i][0:header[i].find('/')] +  '/ \si{' + header[i][header[i].find('/')+1:] + '}$} & ')
@@ -48,7 +48,7 @@ class Latexdocument(object):
             f.write('\\midrule  \n')
             for i in range(0, len(data[0])):
                 for j in range(0, len(data)):
-                    if type(data[j][0]) == uncertainties.core.Variable:
+                    if (type(data[j][i]) == uncertainties.core.Variable or type(data[j][i]) == uncertainties.core.AffineScalarFunc):
                         if j == len(data) - 1:
                             f.write(('{:.' + str(return_int(places[j][0])) + 'f} ' + '& {:.' + str(return_int(places[j][1])) + 'f}' + '\\\ \n').format(data[j][i].n, data[j][i].s))
                         else:

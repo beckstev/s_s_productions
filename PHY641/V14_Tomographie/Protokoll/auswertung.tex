@@ -1,1 +1,82 @@
 \section{Auswertung}
+Die nachfolgenden Operationen der linearen Algebra werden mit dem \emph{python}-Paket
+\emph{numpy}\cite{} durchgeführt. Hierbei ist das Vorgehen bei allen drei Würfeln
+analog. Die gemessenen Counts $N\ua{i}$ werden mit einem statistischen Fehler
+von $\sigma_{N\ua{i}} = \sqrt{N\ua{i}}$ belegt. Mit den Ergebnissen aus
+der Leermessung wird für jeden Wert $N\ua{i}$ die Größe
+\begin{equation}
+  y\ua{i} = \ln\left(\frac{N\ua{0, i}}{N\ua{i}} \right)
+  \label{eq: y}
+\end{equation}
+berechnet, wobei $N\ua{0, i}$ der gemäß
+\begin{equation}
+  N\ua{0, i} = N\ua{0} \frac{t\ua{i}}{t_0}
+  \label{eq: count_skalierung}
+\end{equation}
+auf die entsprechende Messzeit $t\ua{i}$ normierte Wert der Leermessung $(N\ua{0}, t_0)$ ist.
+Der Fehler ergibt sich gemäß Gaußscher Fehlerfortpflanzung zu
+\begin{equation}
+  \sigma_{y_i} = \sqrt{\left(\frac{\sigma_{N\ua{0, i}}}{N\ua{0, i}} \right)^2 +    \left(\frac{\sigma_{N\ua{i}}}{N\ua{i}} \right)^2}.
+\end{equation}
+Die Kovarianzmatrix $\symbf{V}\left[\vec{y}\right]$ des Vektors $\vec{y} = \left(y_1, \dots , y\ua{n} \right)^\top$ hat aufgrund der statistischen Unabhängigkeit der
+Einzelmessungen eine diagonale Gestalt
+\begin{equation}
+  \symbf{V}\left[\vec{y}\right] = \mathup{diag}\left(\sigma_{y_1}^2, \dots , \sigma_{y\ua{n}}^2 \right).
+\end{equation}
+Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
+\begin{equation}
+  \vec{\mu} = \left(\symbf{A}^\top \symbf{W} \symbf{A}\right)^{-1}  \symbf{A}^\top \symbf{W} \, \vec{y}, \quad \symbf{W} = \symbf{V}^{-1}.
+  \label{eq: mu}
+\end{equation}
+Und die zugehörige Kovarianzmatrix $\symbf{V}[\vec{\mu}]$ gemäß
+\begin{equation}
+  \symbf{V}\left[\vec{\mu}\right] = \left( \symbf{A}^\top \symbf{W}  \symbf{A}\right)^{-1}
+\end{equation}
+Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus den Wurzeln der Diagonalemente der Kovarianzmatrix
+\begin{equation}
+ \sigma_{\mu\ua{i}} = \sqrt{\left(V[\vec{\mu}]\right)\ua{ii}}.
+ \label{eq: sigma_mu}
+\end{equation}
+
+\subsection{Leermessung}
+Die Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt. Hierbei sind zu jeder Projektion
+die Kanäle angegeben, über die integriert wird. Die Messung von Projektion $1$ wird representativ für die
+Projektionen 2, 3, 10, 11, 12 verwendet, die von $4$ für 6, 7, 9 und die von $8$ für 5.
+\input{../Messdaten/tabs/leermessung.tex}
+
+\subsection{Untersuchung des Aluminium- und Blei-Würfels}
+Die aufgenommenen Daten und berechneten Größen sind in den Tabellen~\ref{tab: alu} und \ref{tab: blei} einzusehen.
+Die gemäß der Gleichungen \eqref{eq: mu} und \eqref{eq: sigma_mu} bestimmten Absorptionskoeffizienten
+der einzelnen Elementarwürfel sind in Tabelle~\ref{tab: results_mu} aufgeführt.
+\FloatBarrier
+\input{../Messdaten/tabs/alu.tex}
+\input{../Messdaten/tabs/blei.tex}
+
+Als gewichtete Mittelwerte der Absorptionskoeffizienten für Aluminium $\mu_{\ce{Al}}$ und Blei $\mu_{\ce{Pb}}$
+ergeben sich
+\begin{align}
+  \begin{aligned}
+  \mu_{\ce{Al}} &= \SI{0.188(3)}{\per\centi\meter}\\
+  \mu_{\ce{Pb}} &= \SI{0.934(4)}{\per\centi\meter}.
+  \label{eq: exp_mu}
+\end{aligned}
+\end{align}
+Die Literaturwerte $\mu_{\ce{Al}, \mathup{lit}}$ und $\mu_{\ce{Pb}, \mathup{lit}}$ betragen gemäß Quelle \cite{mu}
+\begin{align}
+  \begin{aligned}
+  \mu_{\ce{Al}, \mathup{lit}} &= \SI{0.202}{\per\centi\meter} \\
+  \mu_{\ce{Pb}, \mathup{lit}} &= \SI{1.245}{\per\centi\meter}.
+  \label{eq: lit_mu}
+\end{aligned}
+\end{align}
+\input{../Messdaten/tabs/mu_pb_al.tex}
+\FloatBarrier
+
+\subsection{Untersuchung des Unbekannten Würfels}
+Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen. Zur Quantitativen Diskussion der Zusammensetzung
+des unbekannten Würfels sind in Tabelle~\ref{tab: delta_mu} neben den bestimmten Absorptionskoeffizienten die mittleren Absoluten
+Abweichungen zu den Literaturwerten \eqref{eq: lit_mu} und experimentell bestimmten Werten \eqref{eq: exp_mu} eingetragen.
+\FloatBarrier
+\input{../Messdaten/tabs/unb.tex}
+\input{../Messdaten/tabs/delta_mu.tex}
+\FloatBarrier
