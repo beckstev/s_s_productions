@@ -30,7 +30,7 @@ A = np.matrix([[1, 1, 1, 0, 0, 0, 0, 0, 0],
                [1, 0, 0, 1, 0, 0, 1, 0, 0],
                [0, 1, 0, 0, 1, 0, 0, 1, 0],
                [0, 0, 1, 0, 0, 1, 0, 0, 1]])
-print(np.linalg.det((A.T * A)))
+#print(np.linalg.det((A.T * A)))
 
 
 def cov_y(y):
@@ -103,6 +103,21 @@ mu_err_alu = np.array(np.sqrt(np.diag(V_mu_alu)))
 mu_alu = unp.uarray(mu_alu, mu_err_alu)
 
 
+
+
+V_alu_matrix = np.zeros([9, 9])
+for i in range(0, 9):
+    V_alu_matrix[:, i] = V_mu_alu[:, i].T*1e5
+
+
+l.Latexdocument('tabs/cov_alu.tex').tabular(
+data = [*V_alu_matrix], #mu_alu
+header = ['1', '2', '3', '4', '5', '6', '7', '8', '9'],#'\mu / \centi\meter^{-1}'
+places = [2, 2, 2, 2, 2, 2, 2, 2, 2],#, (2.2, 2.2)
+caption = 'matrix_alu.',
+label = 'matrix_alu')
+
+
 mu_alu_mean = weight_mid(mu_alu)#np.mean(mu_alu)
 
 r.app('\mu_{\ce{Al}}', Q_(mu_alu_mean, '1/cm'))
@@ -135,13 +150,25 @@ mu_blei = unp.uarray(mu_blei, mu_err_blei)
 mu_blei_mean = weight_mid(mu_blei)
 r.app('\mu_{\ce{Pb}}', Q_(mu_blei_mean, '1/cm'))
 
+V_blei_matrix = np.zeros([9, 9])
+for i in range(0, 9):
+    V_blei_matrix[:, i] = V_mu_blei[:, i].T*1e5
+
+l.Latexdocument('tabs/cov_blei.tex').tabular(
+data = [*V_blei_matrix], #mu_alu
+header = ['1', '2', '3', '4', '5', '6', '7', '8', '9'],#'\mu / \centi\meter^{-1}'
+places = [2, 2, 2, 2, 2, 2, 2, 2, 2],#, (2.2, 2.2)
+caption = 'matrix_blei.',
+label = 'matrix_blei')
+
+
 #l.Latexdocument('tabs/blei.tex').tabular(
 #data = [I, channel_blei, t_blei, counts_blei, I_0_blei, y_blei], #mu_alu
 #header = ['\\text{Projektion} / ', '\\text{Kanal} / ', 't / \second', 'N / ', 'N_0 / ', 'y / ' ],#'\mu / \centi\meter^{-1}'
 #places = [0, (2.0, 2.0), 2, (4.0, 2.0), (6.0, 3.0), (1.2, 1.2)],#, (2.2, 2.2)
 #caption = 'Aufgenommene Messdaten und berechnete Größen zur Untersuchung des Bleiwürfels.',
 #label = 'blei')
-print(mu_blei)
+
 
 
 #l.Latexdocument('tabs/mu_pb_al.tex').tabular(
@@ -163,6 +190,18 @@ y_unb = log(I_0_unb / counts_unb)
 V_y_unb = cov_y(stds(y_unb))
 mu_unb = mu(V_y_unb, noms(y_unb))[0]
 V_mu_unb = cov_mu(V_y_unb)
+V_unb_matrix = np.zeros([9, 9])
+for i in range(0, 9):
+    V_unb_matrix[:, i] = V_mu_unb[:, i].T*1e5
+
+l.Latexdocument('tabs/cov_unb.tex').tabular(
+data = [*V_unb_matrix], #mu_alu
+header = ['1', '2', '3', '4', '5', '6', '7', '8', '9'],#'\mu / \centi\meter^{-1}'
+places = [2, 2, 2, 2, 2, 2, 2, 2, 2],#, (2.2, 2.2)
+caption = 'matrix_unb.',
+label = 'matrix_unb')
+
+
 mu_err_unb = np.sqrt(np.diag(V_mu_unb))
 mu_unb = unp.uarray(mu_unb, mu_err_unb)
 #delta_alu = mu_unb - mu_alu_mean
@@ -186,9 +225,7 @@ delta_alu_lit = noms(abs(mu_unb - mu_alu_lit))
 delta_blei_exp = noms(abs(mu_unb - mu_blei_mean.n))
 delta_alu_exp = noms(abs(mu_unb - mu_alu_mean.n))
 
-print(mu_unb)
-print(delta_alu_exp)
-print(mu_alu_mean.n)
+
 
 
 #l.Latexdocument('tabs/delta_mu.tex').tabular(
