@@ -1,7 +1,8 @@
 \section{Versuchsaufbau/-durchführung}
 \textbf{autocomplete python wieder installieren}
-Ein zu untersuchender Würfel, dessen Hülle aus Aluminium besteht, beinhaltet neun kleinere Würfel der Länge $l$,
+Ein zu untersuchender Würfel, dessen Hülle aus Aluminium besteht, beinhaltet 27 kleinere Würfel der Länge $l=\SI{1}{\centi\meter}$,
 die jeweils aus Aluminium oder Blei gefertigt sind (vgl. \ref{fig: aufbau}).
+Von diesen 27 Würfeln werden, 9 auf einer Ebene liegende Würfel untersucht, wie auch in der Abbildung \ref{fig: aufbau} angedeutet.
 
 \begin{figure}[h]
   \centering
@@ -11,7 +12,7 @@ die jeweils aus Aluminium oder Blei gefertigt sind (vgl. \ref{fig: aufbau}).
 \end{figure}
 
 Insgesamt werden in dem Versuch vier verschiedene Würfel untersucht. Eine Leermessung findet an
-einem komplett leeren Würfel statt. Mit der Leermessung wird die Größe $I_0$ bestimmt \textbf{untersuchen}.
+einem komplett leeren Würfel statt. Mit der Leermessung wird die Größe $I_0$ bestimmt.
 Außerdem soll so die Auswirkungen der Aluminiumhülle und der Umgebung gemessen werden.
 Zum andern wird ein Würfel, der komplett aus Aluminium besteht und
 ein aus Blei zusammengesetzter Würfel vermessen. Abschließend wird ein Würfel
@@ -19,6 +20,8 @@ unbekannter Zusammensetzung analysiert.
 
 Die Analyse eines Würfels erfolgt in zwölf einzelne Messungen $i$,
 bei jeder dieser Messungen wird die Ausrichtung des Würfels zum $\gamma$-Strahl geändert.
+Dies sind drei mehr Messungen als eigentlich zur genauen Bestimmung der Absoprtionskoeffizienten
+benötigt werden und dienen zur Verbesserung der Genauigkeit.
 Eine Übersicht der verschiedenen Positionierungen befindest sich in der Abbildung \ref{fig: positionierung}.
 
 \begin{figure}[h]
@@ -42,7 +45,6 @@ Matrixschreibweise geschrieben werden kann als
   \underbrace{ l\begin{pmatrix} 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\ 0 & s & 0 & s & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & s & 0 & s & 0 & s & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & s & 0 & s & 0 \\ 0 & 0 & 0 & s & 0 & 0 & 0 & s & 0 \\ s & 0 & 0 & 0 & s & 0 & 0 & 0 & 0 \\ 0 & s & 0 & 0 & 0 & s & 0 & 0 & 0 \\ 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \end{pmatrix} }_{=:\Phi}  \underbrace{ \begin{pmatrix}\mu_1 \\ \mu_2 \\ \mu_3 \\ \mu_4 \\ \mu_5 \\ \mu_6 \\ \mu_7 \\ \mu_8 \\ \mu_9 \end{pmatrix} }_{=:\vec{\mu}} = \underbrace{ \begin{pmatrix} I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_5 \\ I_6 \\ I_7 \\ I_8 \\ I_9 \\ I_{10} \\ I_{11} \\ I_{12} \end{pmatrix} }_{ =:\vec{I}}, \quad s:=\sqrt{2}
 \end{equation}
 Das Lösungsverfahren für das Gleichungssystem wird in dem Kapitel \emph{Auswertung} näher beschrieben.
-
 Die im Versuch verwendete $\gamma$-Strahlung wird mit Hilfe von $^{137}\ce{Cs}$ erzeugt (vgl. Abbildung \ref{fig: zerfall}).
 
 \begin{figure}[h]
