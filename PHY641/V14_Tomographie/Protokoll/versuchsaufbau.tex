@@ -1,4 +1,5 @@
 \section{Versuchsaufbau/-durchführung}
+\textbf{autocomplete python wieder installieren}
 Ein zu untersuchender Würfel, dessen Hülle aus Aluminium besteht, beinhaltet neun kleinere Würfel der Länge $l$,
 die jeweils aus Aluminium oder Blei gefertigt sind (vgl. \ref{fig: aufbau}).
 
@@ -46,7 +47,7 @@ Die im Versuch verwendete $\gamma$-Strahlung wird mit Hilfe von $^{137}\ce{Cs}$ 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{pics/tikz-Energieschema.pdf}
+  \includegraphics[width=0.5\textwidth]{pics/tikz-Energieschema.pdf}
   \caption{$^{137}\ce{Cs}$ als Quelle für $\gamma$-Strahlung im Versuch B14 \cite{luckyjosh}.}
   \label{fig: zerfall}
 \end{figure}
@@ -62,6 +63,14 @@ erstellt so ein Histogramm. Ist ein Channel auf HIGH gesetzt, werden alle andere
 bis der angeregte Channel wieder auf LOW fällt und somit sensitiv für ein neues Signal ist.
 
 An einem beispielhaften Histogramm (vgl. Abb. \ref{fig: histo}) werden Wechselwirkungseffekte deutlich.
+Hierbei ist die $x$-Achse ein Maß für die Energie der gemessenen Photonen.
+Zu den Wechselwirkungseffekten gehören zum einen \emph{Compton Streuung}, \emph{Photoeffekt} und die \emph{Paarerzeugung}.
+Jedoch tritt die Paarerzeug erst ab einer Energie von $E\ua{paar}\approx \SI{1}{\mega\eV}$ auf, die erzeugte $\gamma$-Strahlung
+besitzt aber lediglich eine Energie von $E_{\gamma}\approx\SI{0.66}{\mega\eV}$ (vgl. Abb. \ref{fig: zerfall}).
+
+Die Compton Streuung sorgt für eine Energieabschwächung der $\gamma$-Strahlung und ist deshalb für die Counts rechts von dem
+orang eingefärbten Bereich. Die Verringerung der Counts im Breich von Channel 46, lässt sich mit dem Photoeffekt erklären.
+In diesem Energiebereich liegt offensichtlich die Energie, um ein Elektron eines Bleiwürfels anzuregen.  % Stefan vlt schreibst du kurz in der Diskussion das die Abbildung auch nicht ideal ist und die einzelenen Effekt enicht wirklich erkennbar sind.
 
 \begin{figure}[h]
   \centering
