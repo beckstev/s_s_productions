@@ -11,27 +11,27 @@ Von diesen 27 Würfeln werden, 9 auf einer Ebene liegende Würfel untersucht, wi
 \end{figure}
 
 Insgesamt werden in dem Versuch vier verschiedene Würfel untersucht. Eine Leermessung findet an
-einem komplett leeren Würfel statt. Mit der Leermessung wird die Größe $I_0$ bestimmt.
+einem komplett leeren Würfel statt. Mit der Leermessung wird die Größe $I_0$ bestimmt. %wir messen counts, nicht intensitäten
 Außerdem soll so die Auswirkungen der Aluminiumhülle und der Umgebung gemessen werden.
-Zum andern wird ein Würfel, der komplett aus Aluminium besteht und
+Zum andern wird ein Würfel, der komplett aus Aluminium besteht und %zum anderen werden
 ein aus Blei zusammengesetzter Würfel vermessen. Abschließend wird ein Würfel
 unbekannter Zusammensetzung analysiert.
 
-Die Analyse eines Würfels erfolgt in zwölf einzelne Messungen $i$,
+Die Analyse eines Würfels erfolgt in zwölf einzelne Messungen $i$, %einzelnen, punkt
 bei jeder dieser Messungen wird die Ausrichtung des Würfels zum $\gamma$-Strahl geändert.
-Dies sind drei mehr Messungen als eigentlich zur genauen Bestimmung der Absorprtionskoeffizienten
-benötigt werden und dienen zur Verbesserung der Genauigkeit.
+Dies sind drei mehr Messungen als eigentlich zur genauen Bestimmung der Absorprtionskoeffizienten %absorption
+benötigt werden und dienen zur Verbesserung der Genauigkeit. %satzbau
 Eine Übersicht der verschiedenen Positionierungen befindet sich in der Abbildung \ref{fig: positionierung}.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{pics/positionierung.pdf}
-  \caption{Verschiedene Positionierunngen des Würfels. \cite{luckyjosh}.}
+  \caption{Verschiedene Positionierunngen des Würfels. \cite{luckyjosh}.} %n
   \label{fig: positionierung}
 \end{figure}
 
 Insgesamt werden somit zwölf unterschiedliche Counts $N_i$ gemessen.
-Eine Messung wird so lange durchgeführt bis der relative Fehler der poissonverteilten Counts
+Eine Messung wird so lange durchgeführt bis der relative Fehler der poissonverteilten Counts%,bis
 \begin{equation*}
   \sigma\ua{rel}=\frac{\sqrt{N}}{N}, \quad \text{Fehler\, Poisson}= \sqrt{N}
 \end{equation*}
@@ -58,20 +58,20 @@ Unter Einfluss von ionisierender Strahlung fängt dieser an zu leuchten bzw. emi
 Die ausgesendeten Photonen werden mit einem \emph{Photomultiplier} erfasst. Wird ein Photon detektiert,
 so gibt der Multiplier ein elektrisches Signal ab, wobei die Stärke des Signals proportional zur Energie des Photons ist.
 Dass vom \emph{Photomultiplier} ausgesendete Signal,
-wird an einen \emph{Diskriminator} weitergeleitet, der dieses je nach Signalstärke, einen Channel des
-\emph{Multichannelanalyzer} zuweist. Der Multichannelanalyzer zählt, wie oft ein Signal einem Channel (insgesamt 1024) zugewiesen wurde, und
+wird an einen \emph{Diskriminator} weitergeleitet, der dieses je nach Signalstärke, einen Channel des %einem
+\emph{Multichannelanalyzer} zuweist. Der Multichannelanalyzer zählt, wie oft ein Signal einem Channel (insgesamt 1024) zugewiesen wurde, und %analyzers
 erstellt so ein Histogramm. Ist ein Channel auf HIGH gesetzt, werden alle anderen Channel so lang deaktiviert,
 bis der angeregte Channel wieder auf LOW fällt und somit sensitiv für ein neues Signal ist.
 
 An einem beispielhaften Histogramm (vgl. Abb. \ref{fig: histo}) werden die auftreteten Wechselwirkungseffekte teilweise deutlich.
-bei dem Plot ist die $x$-Achse ein Maß für die Energie der gemessenen Photonen und auf der $y$-Achse sind die vom Multichannelanalyzer
-gezählten Photon aufgetragen.
-Zu den Wechselwirkungseffekten gehören zum einen \emph{Compton Streuung}, \emph{Photoeffekt} und die \emph{Paarerzeugung}.
-Jedoch tritt die Paarerzeugung erst ab einer Energie von $E\ua{paar}\approx \SI{1}{\mega\eV}$ auf, die erzeugte $\gamma$-Strahlung
+bei dem Plot ist die $x$-Achse ein Maß für die Energie der gemessenen Photonen und auf der $y$-Achse sind die vom Multichannelanalyzer %Bei
+gezählten Photon aufgetragen. %Photonen, zählt nicht anzahl photonen
+Zu den Wechselwirkungseffekten gehören zum einen \emph{Compton Streuung}, \emph{Photoeffekt} und die \emph{Paarerzeugung}. %ohne zum einen
+Jedoch tritt die Paarerzeugung erst ab einer Energie von $E\ua{paar}\approx \SI{1}{\mega\eV}$ auf, die erzeugte $\gamma$-Strahlung %auf. Die
 besitzt aber lediglich eine Energie von $E_{\gamma}\approx\SI{0.66}{\mega\eV}$ (vgl. Abb. \ref{fig: zerfall}).
 Deshalb ist Paarerzeugung nicht beobachtbar.
 
-Die Compton Streuung sorgt für eine Energieabschwächung der $\gamma$-Strahlung und ist deshalb für die Counts rechts von dem
+Die Compton Streuung sorgt für eine Energieabschwächung der $\gamma$-Strahlung und ist deshalb für die Counts rechts von dem %links
 orange eingefärbten Bereich. Die Verringerung der Counts im Bereich von Channel 46 lässt sich mit dem Photoeffekt erklären.
 In diesem Energiebereich liegt offensichtlich die Energie, um ein Elektron eines Bleiwürfels anzuregen.  % Stefan vlt schreibst du kurz in der Diskussion das die Abbildung auch nicht ideal ist und die einzelenen Effekt enicht wirklich erkennbar sind.
 
