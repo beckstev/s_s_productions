@@ -1,6 +1,6 @@
 \section{Auswertung}
 Die nachfolgenden Operationen der linearen Algebra werden mit dem \emph{python}-Paket
-\emph{numpy}\cite{} durchgeführt. Hierbei ist das Vorgehen bei allen drei Würfeln
+\emph{numpy}\cite{} durchgeführt. Hierbei ist das Vorgehen bei allen drei Würfeln %cite
 analog. Die gemessenen Counts $N\ua{i}$ werden mit einem statistischen Fehler
 von $\sigma_{N\ua{i}} = \sqrt{N\ua{i}}$ belegt. Mit den Ergebnissen aus
 der Leermessung wird für jeden Wert $N\ua{i}$ die Größe
@@ -23,7 +23,7 @@ Einzelmessungen eine diagonale Gestalt
 \begin{equation}
   \symbf{V}\left[\vec{y}\right] = \mathup{diag}\left(\sigma_{y_1}^2, \dots , \sigma_{y\ua{n}}^2 \right).
 \end{equation}
-Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots}
+Der zu bestimmende Vektor $\vec{\mu} = \left(\mu_1, \dots , \mu_9 \right)^\top$ berechnet sich damit gemäß\footnote{Für Herleitung siehe z.B. \dots} %footnote \dots
 \begin{equation}
   \vec{\mu} = \left(\symbf{A}^\top \symbf{W} \symbf{A}\right)^{-1}  \symbf{A}^\top \symbf{W} \, \vec{y}, \quad \symbf{W} = \symbf{V}^{-1}.
   \label{eq: mu}
@@ -39,7 +39,7 @@ Die Fehler $\sigma_{\mu\ua{i}}$der Absorptionskoeffizienten berechnen sich aus d
 \end{equation}
 
 \subsection{Leermessung}
-Die Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt. Hierbei sind zu jeder Projektion
+Die Daten der Leermessung sind in Tabelle~\ref{tab: leermessung} aufgeführt. Hierbei sind zu jeder Projektion %\ref
 die Kanäle angegeben, über die integriert wird. Die Messung von Projektion $1$ wird representativ für die
 Projektionen 2, 3, 10, 11, 12 verwendet, die von $4$ für 6, 7, 9 und die von $8$ für 5.
 \input{../Messdaten/tabs/leermessung.tex}
@@ -73,8 +73,8 @@ Die Literaturwerte $\mu_{\ce{Al}, \mathup{lit}}$ und $\mu_{\ce{Pb}, \mathup{lit}
 \FloatBarrier
 
 \subsection{Untersuchung des Unbekannten Würfels}
-Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen. Zur Quantitativen Diskussion der Zusammensetzung
-des unbekannten Würfels sind in Tabelle~\ref{tab: delta_mu} neben den bestimmten Absorptionskoeffizienten die mittleren Absoluten
+Die aufgenommenen Daten sind in Tabelle~\ref{tab: unb} einzusehen. Zur Quantitativen Diskussion der Zusammensetzung %quantitativ klein?
+des unbekannten Würfels sind in Tabelle~\ref{tab: delta_mu} neben den bestimmten Absorptionskoeffizienten die mittleren Absoluten %absoluten klein?
 Abweichungen zu den Literaturwerten \eqref{eq: lit_mu} und experimentell bestimmten Werten \eqref{eq: exp_mu} eingetragen.
 \FloatBarrier
 \input{../Messdaten/tabs/unb.tex}
